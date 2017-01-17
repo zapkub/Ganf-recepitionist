@@ -1,0 +1,7 @@
+node:
+    image: node:6
+    volumes: 
+        - ./src:/src
+    ports: 
+        - "5555:3000"
+    command: node /src/index.js
