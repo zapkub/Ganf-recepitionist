@@ -5,12 +5,13 @@ const app = express();
 const fs = require('fs');
 const https = require('https');
 
-var options = {
-    key: fs.readFileSync(path.join(__dirname, './key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, './cert.pem')),
-    passphrase: 'butthole',
-};
 
+
+app.set('port', (process.env.PORT || 5000));
+
+app.get('/', function(req ,res) {
+    res.send('Hi, my name s Ganf')
+});
 app.get('/webhook', function (req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&
         req.query['hub.verify_token'] === "raise-of-my-butt-hole") {
@@ -22,4 +23,6 @@ app.get('/webhook', function (req, res) {
     }
 });
 
-https.createServer(options, app).listen(3000);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
