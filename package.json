@@ -5,10 +5,13 @@
   "repository": "https://github.com/zapkub/Ganf-recepitionist.git",
   "author": "Rungsikorn Rungsikavanich <rungsikorn@me.com>",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "start": "node ./src/index.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "config": "^1.24.0",
+    "crypto": "^0.0.3",
     "express": "^4.14.0",
     "next": "^2.0.0-beta.17"
   }
